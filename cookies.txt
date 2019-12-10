@@ -1,0 +1,9 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.bootswatch.com	TRUE	/	FALSE	1999999999	__cfduid	daf0dee898ae8c2a6a65685e9848b75fa1575972303
+.paidalts.com	TRUE	/	FALSE	1999999999	__cfduid	db7b10f0fd887ce10e7f06e999b0cac831575972323
+paidalts.com	TRUE	/	FALSE	1999999999	adonis-session	d5ba64dc227907bc1ae36d67e05c0510SKGxV9Kj4e%2F32pefRVXBu1LWaJRGpSSM38Wc1%2B0rfRknyZREJyJsBevpfTUFBYd2SVnje0fx2EF5nj9qvPi5L9CdddlGhXe7cVF2e%2BfJXkKDDd0KWUhUHeNGwEEcT4ab
+paidalts.com	TRUE	/	FALSE	1999999999	XSRF-TOKEN	00e1ca01b13d1db865266ac165f20c12CkJJJK0Z86Ta1PBBysU6wLTb%2FHNucklPn0JLyqriBpHptBm7qgoA14c1DAAKYXpGrspDnv%2F3xwqf93nJEscq6%2FdzcZovtiBRkXqm0qpygM4xMOdovC4ot8NfsVC5vTta
+paidalts.com	TRUE	/	FALSE	1999999999	adonis-session-values	1bc9df196b5c47e3336d19aaf31514e6zHDrQLFn2MKzUarraLgqZWGa%2F8iuIEte%2B2Din%2FLZBKeBF6jPcSBll4Sgqmn8ZVDVDorVPmWOWoe7bjENiKMvcm60lNDOP%2FV9jJTM1%2B%2FHGZLFMHsO33sQznGyurtH%2FNQ0R2v2jbef%2BNY7cxCT13EOqs6lhMoh9xRNxMGP5PgY9kQ%3D
+paidalts.com	TRUE	/	FALSE	1999999999	SameSite	Strict
+

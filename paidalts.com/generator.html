@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from paidalts.com/generator.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 10 Dec 2019 10:05:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Buy Minecraft accounts/alts for cheap prices.">
+<meta name="keywords" content="Minecraft,alts,accounts,buy,paid,free,accountgenerator,altgen">
+<meta name="author" content="BetaNyan">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><meta http-equiv="refresh" content="0;url=https://www.verifycaptcha.com/contentlockers/noscript.php" /></noscript>
+<script type="text/javascript">var ogblock=true;</script>
+<script type="text/javascript" id="ogjs" src="https://www.verifycaptcha.com/contentlockers/load.php?id=f4cf1160e2eef71ad15914ed4dbec020"></script>
+<script type="text/javascript">if(ogblock) window.location.href = "https://www.verifycaptcha.com/contentlockers/adblock.php";</script>
+<title>PaidAlts - Generate Minecraft Alts</title>
+</head>
+<body>
+<link rel="stylesheet" href="../bootswatch.com/3/paper/bootstrap.min.css" />
+<link rel="stylesheet" href="../use.fontawesome.com/releases/v5.0.13/css/all.css" />
+<link rel="stylesheet" href="../fonts.googleapis.com/cssa823.css?family=Open+Sans:400,600,700.css" />
+<link rel="stylesheet" href="main.css" />
+<style>
+  .product-body > ul {
+    padding-left: 15px;
+    margin: 0;
+  }
+  </style>
+<title>PaidAlts - Minecraft Alt Shop</title>
+</head>
+<body>
+<nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="index.html">PaidAlts</a>
+</div>
+<div class="navbar-collapse collapse" id="navbar-collapsible">
+<ul class="nav navbar-nav navbar-left">
+<li><a href="generator.html">Free Accounts</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+<li><a target="_blank" href="#">Discord</a></li>
+<li><a target="_blank" href="https://twitter.com/PaidAltsCom">Twitter</a></li>
+<li><a href="tos.html">Terms of Service</a></li>
+<li>&nbsp;</li>
+</ul>
+</div>
+</div>
+</nav>
+<main>
+<div id="paidalts-header">
+<img src="logo.png" alt="PaidAlts Logo" class="paidalts-logo">
+<p>Generate 5-12 Unmigrated Accounts (or a chance at a FULL ACCESS Minecon Cape for FREE!</p>
+<div class="container">
+<button onclick="generate()" type="submit" role="button" class="btn btn-primary btn-block purchase-button execute-checkout">Generate Accounts</button>
+<textarea id="logs" rows=10 class="form-control" name="account_field" placeholder="Account List will be put here" disabled></textarea>
+<button onclick="generate()" type="submit" role="button" class="btn btn-primary btn-block purchase-button execute-checkout">Generate Accounts</button>
+</div>
+<script>
+const generate = async () => {
+	
+	document.getElementById("logs").value = "Generating accounts...\n";
+	await wait(1500);
+	document.getElementById("logs").value += "Accessing database..." + "\n";
+	await wait(1500);
+	document.getElementById("logs").value += "Connected! Grabbing accounts..." + "\n";
+	await wait(1500);
+	document.getElementById("logs").value += "Found " + (Math.floor(Math.random() * 12) + 5) + " Unmigrated Accounts! \n";
+	await wait(500);
+	document.getElementById("logs").value += "Human Verification required! This is to make sure you're not a bot \n";
+	document.getElementById("logs").value += "Opening verification... \n";
+	
+	await wait(3000);
+	
+	call_locker();
+	
+}
+function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+</script>
+</div>
+</main>
+</body>

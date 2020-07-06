@@ -1,362 +1,43 @@
+
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no">
+        <meta name="theme-color" content="#000000">
+        <title>ClassCharts Student App</title>
+        <script type="text/javascript">
+            var rootUrl = '';
+            var apiUrl = '/apiv2student';
+            var apiMessagingUrl = '/apistudentmessaging';
+            var dateFormat = 'DD/MM/YYYY';
+            var appType = 'student';
+            var languages = {"en_gb":"English (UK)","en_us":"English (US)","cy_uk":"Cymraeg","es_es":"Espa\u00f1ol","fr_fr":"Fran\u00e7ais","it_it":"Italiano","nl_nl":"Nederlands","pt_pt":"Portugu\u00eas","ar_ae":"\u0639\u0631\u0628\u0649"};
+            var isMobileApp = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            var isAndroidApp = false;
+            var isIosApp = false;
+            var googleAnaylticsId = 'UA-37181457-1';
+            var googleRecaptchaSiteKey = '6LfjH5wUAAAAAKECfBGnYAS02QJRau3-jnKIvJpU';
+            var pusherKey = '935286b74867cd6f6732';
 
-<!-- Mirrored from paidalts.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 10 Dec 2019 10:04:51 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-<head>
-<meta charset="UTF-8">
-<meta name="description" content="Compre contas / alts de Minecraft por preços baratos.">
-<meta name="keywords" content="Minecraft,alts,accounts,buy,paid,free,accountgenerator,altgen">
-<meta name="author" content="BetaNyan">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="https://mcpaid.com/favicon.ico">
-<link rel="stylesheet" href="../bootswatch.com/3/paper/bootstrap.min.css" />
-<link rel="stylesheet" href="../use.fontawesome.com/releases/v5.0.13/css/all.css" />
-<link rel="stylesheet" href="../fonts.googleapis.com/cssa823.css?family=Open+Sans:400,600,700.css" />
-<link rel="stylesheet" href="main.css" />
-<style>
-  .product-body > ul {
-    padding-left: 15px;
-    margin: 0;
-  }
-  </style>
-<title>LawerStore - Alt Fazer Compras</title>
-</head>
-<body>
-<nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
-<div class="container">
-<div class="navbar-header">
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
-<span class="sr-only">Toggle navigation</span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-<a class="navbar-brand" href="index.html">LawerStore</a>
-</div>
-<div class="navbar-collapse collapse" id="navbar-collapsible">
-<ul class="nav navbar-nav navbar-left">
-<li><a href="https://discord.gg/Z2j5YWZ">Contas gratuitas</a></li>
-<li><a href="contact.html">Contate-Nos</a></li>
-<li><a target="_blank" href="https://discord.gg/Z2j5YWZ">Discord</a></li>
-<li><a href="tos.html">Termos de serviço</a></li>
-<li>&nbsp;</li>
-</ul>
-</div>
-</nav>
-<main>
-<div id="paidalts-header">
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Neon Letters</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="sign">
-      <span class="fast-flicker">L</span>AWER<span class="flicker">  S</span>hop
-    </div>
-  </body>
-</html>
-
-<p><b>Junte-se</b> Discord Sorteios <a href="Clique aqui">https://discord.gg/Z2j5YWZ</a> </p>
-<div class="product">
-<div class="panel panel-default">
-<span class="label label-danger stock-count">LawerStore</span>
-<div class="product-image">
-
-</div>
-</main>
-<div class="content-section container">
-<div class="row">
-<div class="col-lg-3 col-md-12">
-<div class="modal fade" id="product-minecraft-semi-full-access" tabindex="-1" role="dialog" aria-labelledby="product-minecraft-semi-full-accessLabel">
-<div class="modal-dialog modal-sm" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-<h5 class="modal-title" id="product-minecraft-semi-full-accessLabel">Discord: Nitro Classic [5$]</h5>
-</div>
-<div class="modal-body product-body">
-<p><strong>O que é isso?</strong>
-Este é um clássico nitro da discord que geralmente vale 5 $ / 26,69 Real brasileiro, mas o vendemos por apenas 13,34 Real brasileiro &amp; .</p>
-<p><strong>Em que formato está?</strong>
-todos os códigos estarão no link normal formato.</p>
-</div>
-<div class="modal-footer" style="text-align: initial">
-<form action="https://paidalts.com/product/3/purchase" class="purchase-form" method="post">
-<input type="hidden" name="_csrf" value="O7hxuKJB-beiWS7CupRkzQEbD8JtrxgUYYv4">
- <input type="hidden" id="price" value="0.6">
-<div class="form-group has-feedback ">
-<label for="quantity" class="control-label">O email</label>
-<input type="email" class="form-control input-sm" id="email" name="email" placeholder="email@domain.tld" value="">
-<small class="help-block hidden">null</small>
-<small class="help-block no-error">É aqui que o produto será entregue</small>
-</div>
-<div class="form-group has-feedback ">
-<label for="quantity" class="control-label">Quantidade</label>
-<input type="number" class="form-control input-sm" id="quantity" name="quantity" placeholder="Insira um valor" min="1" max="5" value="13,34 Real">
-<small class="help-block hidden">null</small>
-<small class="help-block no-error">Min. Ordem: 1 <strong>|</strong> Max. Ordem: 5</small>
-</div>
-<div class="form-group">
-<button type="submit" role="button" class="btn btn-primary btn-block purchase-button execute-checkout">Purchase for <a href="tos.html">$3.00</span></button>
-</div>
-</form>
-</div>
-</div>
-</div>
-</div>
-<div class="product">
-<div class="panel panel-default">
-<span class="label label-success stock-count">LawerShop®</span>
-<div class="product-image">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRJqLE3VGshx8yNDjTd5Ll0865_2lSXH4iuIUwu0haucvn82upg%3Ahttps%3A%2F%2Fsupport.discord.com%2Fhc%2Farticle_attachments%2F360013500032%2Fnitro_gif.gif&usqp=CAU" alt="Minecraft: Semi Full Access" class="img-responsive">
-</div>
-<div class="panel-heading">
-Discord: Nitro Classic [5$]
-<div class="pull-right">
-</div>
-</div>
-<div class="panel-body product-body">
-<p><strong>O que é isso?</strong>
-Este é um clássico nitro da discord que geralmente vale 5 $ / 26,69 Real brasileiro, mas o vendemos por apenas 13,34 Real brasileiro &amp; .</p>
-<p><strong>Em que formato está?</strong>
-Todos os códigos estarão no link normal formato.</p>
-</div>
-<div class="panel-footer"><button type="button" data-toggle="modal" data-target="#product-minecraft-non-full-access" <button><a href="https://discord.gg/Z2j5YWZ">Compre em: 20 Real brasileiro</button>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-md-12">
-<div class="modal fade" id="product-minecraft-non-full-access" tabindex="-1" role="dialog" aria-labelledby="product-minecraft-non-full-accessLabel">
-<div class="modal-dialog modal-sm" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-<h5 class="modal-title" id="product-minecraft-non-full-accessLabel">Discord: Nitro Classic [10$]</h5>
-</div>
-<div class="modal-body product-body">
-<span class="label label-success stock-count">LawerShop®</span>
-</div>
-</div>
-</div>
-</div>
-<div class="product">
-<div class="panel panel-default">
-<span class="label label-success stock-count">LawerShop®</span>
-<div class="product-image">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRJqLE3VGshx8yNDjTd5Ll0865_2lSXH4iuIUwu0haucvn82upg%3Ahttps%3A%2F%2Fsupport.discord.com%2Fhc%2Farticle_attachments%2F360013500032%2Fnitro_gif.gif&usqp=CAU" alt="Minecraft: Non Full Access" class="img-responsive">
-</div>
-<div class="panel-heading">
-Discord: Nitro Classic [10$]
-<div class="pull-right">
-</div>
-</div>
-<div class="panel-body product-body">
-<p><strong>O que é isso?</strong>
-Este é um clássico nitro da discórdia que geralmente vale 10$ / 50 Real brasileiro, mas o vendemos por apenas 30 Real brasileiro</p>
-<p><strong>Em que formato está?</strong>
-Todos os códigos estarão no link normal formato.</p>
-</div>
-<div class="panel-footer">
-<button type="button" data-toggle="modal" data-target="#product-minecraft-non-full-access" <button><a href="https://discord.gg/Z2j5YWZ">Compre em: 35  Real brasileiro</button>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-md-12">
-<div class="modal fade" id="product-minecraft-hypixel-unbanned" tabindex="-1" role="dialog" aria-labelledby="product-minecraft-hypixel-unbannedLabel">
-<div class="modal-dialog modal-sm" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-<h5 class="modal-title" id="product-minecraft-hypixel-unbannedLabel">Minecraft: OptiFine Capa</h5>
-</div>
-<div class="modal-body product-body">
-<h3 class="text-center">LawerShop®</h3>
-</div>
-</div>
-</div>
-</div>
-<div class="product">
-<div class="panel panel-default">
-<span class="label label-success stock-count">LawerShop®</span>
-<div class="product-image">
-<img src="https://user-images.githubusercontent.com/52116771/61663350-a7608e80-ac8d-11e9-9788-c5529479105f.gif" alt="Minecraft: Hypixel Unbanned" class="img-responsive">
-</div>
-<div class="panel-heading">
-Minecraft: Optifine Capa
-<div class="pull-right">
-</div>
-</div>
-<div class="panel-body product-body">
-<p><strong>O que é isso?</strong>
-Capa Minecraft OptiFine para transferir
-<p><strong>Em que formato está?</strong>
-Todas as contas estarão no formato <code>email:password</code>.</p>
-</div>
-<div class="panel-footer">
-<button type="button" data-toggle="modal" data-target="#product-minecraft-hypixel-unbanned" <button><a href="https://discord.gg/Z2j5YWZ">Compre em: 20 reais</button>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-md-12">
-<div class="modal fade" id="product-minecraft-unmigrated-full-access" tabindex="-1" role="dialog" aria-labelledby="product-minecraft-unmigrated-full-accessLabel">
-<div class="modal-dialog modal-sm" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-<h5 class="modal-title" id="product-minecraft-unmigrated-full-accessLabel">Netflix</h5>
-</div>
-<div class="modal-body product-body">
-<h3 class="text-center">LawerShop®</h3>
-</div>
-</div>
-</div>
-</div>
-<div class="product">
-<div class="panel panel-default">
-<span class="label label-success stock-count">LawerShop®</span>
-<div class="product-image">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSEyDtPWc3OPKZdBczjYjYEkPSyzUDmMBlBiFtFPvmqJa15g6s%3Ahttps%3A%2F%2Fi2.wp.com%2Ftvrev.com%2Fwp-content%2Fuploads%2F2020%2F02%2Fthibault-penin-AWOl7qqsffM-unsplash-scaled.jpg%3Ffit%3D2560%252C1709%26ssl%3D1&usqp=CAU" alt="Minecraft: Unmigrated Full Access" class="img-responsive">
-</div>
-<div class="panel-heading">
-Netflix 
-<div class="pull-right">
-</div>
-</div>
-<div class="panel-body product-body">
-<p><strong>O que é isso?</strong>
-Netflix 4 telas 4k 1 mês </p>
-<p><strong>Em que formato está?</strong>
-Todas as contas estarão em <code>username:email:password</code> formato.</p>
-</div>
-<div class="panel-footer">
-<button type="button" data-toggle="modal" data-target="#product-minecraft-unmigrated-full-access" <button><a href="https://discord.gg/Z2j5YWZ">Compre em: 24 reais</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-lg-3 col-md-12">
-<div class="modal fade" id="product-minecraft-hypixel-mvp-mvp" tabindex="-1" role="dialog" aria-labelledby="product-minecraft-hypixel-mvp-mvpLabel">
-<div class="modal-dialog modal-sm" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-<h5 class="modal-title" id="product-minecraft-hypixel-mvp-mvpLabel">Minecraft: SFA Conta</h5>
-</div>
-<div class="modal-body product-body">
-<h3 class="text-center">LawerShop®</h3>
-</div>
-</div>
-</div>
-</div>
-<div class="product">
-<div class="panel panel-default">
-<span class="label label-success stock-count">LawerShop®</span>
-<div class="product-image">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ60YRaAMBKON5AznWKGiaIpn_GVWX0Qi_qrDGdm3zvILV15pE9%3Ahttps%3A%2F%2Falts.shop%2Fimages%2Fsfa.jpg&usqp=CAU" alt="Minecraft: Hypixel MVP/MVP+" class="img-responsive">
-</div>
-<div class="panel-heading">
- Minecraft: SFA Conta
-<div class="pull-right">
-</div>
-</div>
-<div class="panel-body product-body">
-<p><strong>O que é isso?</strong>
-Essas são as contas do Minecraft sem perguntas de segurança. Você pode alterar a capa e o nome de usuário.</p>
-<p><strong>Em que formato está?</strong>
-Todas as contas estarão em <code>email:password</code> formato.</p>
-</div>
-<div class="panel-footer">
-<button type="button" data-toggle="modal" data-target="#product-minecraft-hypixel-mvp-mvp" <button><a href="https://discord.gg/Z2j5YWZ">Compre em: 2,50 reais</button>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-md-12">
-<div class="modal fade" id="product-minecraft-hypixel-vip-vip" tabindex="-1" role="dialog" aria-labelledby="product-minecraft-hypixel-vip-vipLabel">
-<div class="modal-dialog modal-sm" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-<h5 class="modal-title" id="product-minecraft-hypixel-vip-vipLabel">Minecraft: Hypixel VIP/VIP+</h5>
-</div>
-<div class="modal-body product-body">
-<h3 class="text-center">LawerShop®</h3>
-</div>
-</div>
-</div>
-</div>
-<div class="product">
-<div class="panel panel-default">
-<span class="label label-success stock-count">LawerShop®</span>
-<div class="product-image">
-<img src="https://pics.paypal.com/00/c/gifts/gb/spotify2.png" alt="Minecraft: Hypixel VIP/VIP+" class="img-responsive">
-</div>
-<div class="panel-heading">
-Spotify Premium
-<div class="pull-right">
-</div>
-</div>
-<div class="panel-body product-body">
-<p><strong>O que é isso?</strong>
-Spotify 3 meses.</p>
-<p><strong>Em que formato está?</strong>
-Todas as contas estarão em <code>email:password</code> formato.</p>
-</div>
-<div class="panel-footer">
-<button type="button" data-toggle="modal" data-target="#product-minecraft-hypixel-vip-vip" <button><a href="https://discord.gg/Z2j5YWZ">Compre em: 9 reais</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<script>
-  $(function() {
-    $('.modal[show]').modal('show')
-    $('.modal:not([show]) .help-block:not(.no-error)').addClass('hidden')
-
-    var formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' })
-    $('.modal input[name="quantity"]').on('input', function (e) {
-      var $form = $(e.target).parents('form')
-      var $totalPrice = $form.find('.total-price')
-      var $submit = $form.find('.execute-checkout')
-
-      var price = parseFloat($form.find('#price').val())
-      var quantity = $(e.target).val()
-
-      $submit.prop('disabled', !!!quantity)
-
-      var total = price * quantity
-      $totalPrice.text(formatter.format(total))
-    })
-  })
-  </script>
-</body>
-
-<!-- Mirrored from paidalts.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 10 Dec 2019 10:05:08 GMT -->
+            // Check for IpadOS
+            if (!isMobileApp) {
+                var isMac = RegExp(/Macintosh/i).test(navigator.userAgent);
+                if (
+                    isMac &&
+                    navigator.maxTouchPoints &&
+                    navigator.maxTouchPoints > 2
+                ) {
+                  isMobileApp = true;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <noscript>
+            You need to enable JavaScript to run this app.
+        </noscript>
+        <div id="root"></div>
+        <script src="https://www.classcharts.com/build/mobile.f8e58ed4f2f2bb8c94da.js"></script>
+    </body>
 </html>

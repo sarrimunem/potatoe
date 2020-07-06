@@ -3,41 +3,667 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no">
-        <meta name="theme-color" content="#000000">
-        <title>ClassCharts Student App</title>
-        <script type="text/javascript">
-            var rootUrl = '';
-            var apiUrl = '/apiv2student';
-            var apiMessagingUrl = '/apistudentmessaging';
-            var dateFormat = 'DD/MM/YYYY';
-            var appType = 'student';
-            var languages = {"en_gb":"English (UK)","en_us":"English (US)","cy_uk":"Cymraeg","es_es":"Espa\u00f1ol","fr_fr":"Fran\u00e7ais","it_it":"Italiano","nl_nl":"Nederlands","pt_pt":"Portugu\u00eas","ar_ae":"\u0639\u0631\u0628\u0649"};
-            var isMobileApp = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            var isAndroidApp = false;
-            var isIosApp = false;
-            var googleAnaylticsId = 'UA-37181457-1';
-            var googleRecaptchaSiteKey = '6LfjH5wUAAAAAKECfBGnYAS02QJRau3-jnKIvJpU';
-            var pusherKey = '935286b74867cd6f6732';
-
-            // Check for IpadOS
-            if (!isMobileApp) {
-                var isMac = RegExp(/Macintosh/i).test(navigator.userAgent);
-                if (
-                    isMac &&
-                    navigator.maxTouchPoints &&
-                    navigator.maxTouchPoints > 2
-                ) {
-                  isMobileApp = true;
-                }
-            }
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Class Charts is super fast behaviour management software, creating school seating plans in seconds. Link our behaviour & seating plan software with SIMS, Powerschool & more" />
+        <title>School Seating Planner & Behaviour Management Software: Class Charts</title>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script><script src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/js/lib/bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/js/lib/jquery.cookie.js"></script><script src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/js/lib/jquery.appear.js"></script><script src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/js/lib/jquery.countTo.js"></script><script src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/js/lib/moment.min.js"></script><script src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/js/home3.js"></script><script src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/js/global.js"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,500,600"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600"/><link rel="stylesheet" href="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/js/lib/bootstrap/3.3.7/css/bootstrap.min.css"/><link rel="stylesheet" href="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/js/lib/font-awesome/5.13.0/css/all.min.css"/><link rel="stylesheet" href="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/js/lib/font-awesome/5.13.0/css/v4-shims.min.css"/><link rel="stylesheet" href="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/css/common.css"/><link rel="stylesheet" href="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/css/home3.css"/>        <script>
+            var root_url = '/';
+            var csrf_session = '6851f365c18dd886819a78ec2e6e0c2a';
+            var moment_date_format = 'D/M/YYYY';
+            var date_format = 'd/m/yy';
         </script>
     </head>
-    <body>
-        <noscript>
-            You need to enable JavaScript to run this app.
-        </noscript>
-        <div id="root"></div>
-        <script src="https://www.classcharts.com/build/mobile.f8e58ed4f2f2bb8c94da.js"></script>
-    </body>
+    <body id="page-pages-display"
+          class="">
+        <div id="wrapper">
+                            
+<header id="header" role="banner">
+    <div id="header-top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 phone-number">
+                    <a href="https://pages.classcharts.com/cc-continued-support/">COVID-19 Continued Support and Help Centre</a>
+                    <span class="hidden">
+                                                    +44 (0)1348 800 100
+                                            </span>
+                </div>
+                <div class="col-md-7 text-right">
+                    <ul class="list-inline">
+                                                    <li>
+                                <a href="/primary">
+                                    Primary                                </a>
+                            </li>
+                            <li>
+                                <a href="/">
+                                    Secondary                                </a>
+                            </li>
+                            <li>
+                                <a href="https://pages.classcharts.com/contact/">
+                                    Contact us                                </a>
+                            </li>
+                                                <li class="dropdown">
+                            <a id="languages-dropdown"
+                               class="dropdown-toggle"
+                               href="#"
+                               data-toggle="dropdown">
+                                English (UK)                            </a>
+                            <ul class="dropdown-menu"
+                                aria-labelledby="languages-dropdown">
+                                                                    <li>
+                                        <a href="?lang=en_gb">
+                                            <img src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/flags/gb.png" alt=""/>                                            <span class="language-name">English (UK)</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="?lang=en_us">
+                                            <img src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/flags/us.png" alt=""/>                                            <span class="language-name">English (US)</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="?lang=cy_uk">
+                                            <img src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/flags/wales.png" alt=""/>                                            <span class="language-name">Cymraeg</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="?lang=es_es">
+                                            <img src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/flags/es.png" alt=""/>                                            <span class="language-name">Español</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="?lang=fr_fr">
+                                            <img src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/flags/fr.png" alt=""/>                                            <span class="language-name">Français</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="?lang=it_it">
+                                            <img src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/flags/it.png" alt=""/>                                            <span class="language-name">Italiano</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="?lang=nl_nl">
+                                            <img src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/flags/nl.png" alt=""/>                                            <span class="language-name">Nederlands</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="?lang=pt_pt">
+                                            <img src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/flags/pt.png" alt=""/>                                            <span class="language-name">Português</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="?lang=ar_ae">
+                                            <img src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/flags/ae.png" alt=""/>                                            <span class="language-name">عربى</span>
+                                        </a>
+                                    </li>
+                                                            </ul>
+                        </li>
+                    </ul>
+                </div> <!-- /.col-md-9 -->
+            </div> <!-- /.row -->
+        </div> <!-- /.container -->
+    </div> <!-- /#header-top-bar -->
+    <nav id="primary-navigation"
+         class="navigation navbar navbar-static-top"
+         role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button"
+                        class="navbar-toggle collapsed"
+                        data-toggle="collapse"
+                        data-target="#primary-navigation-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a id="logo"
+                   class="navbar-brand  with-tes"
+                   href="/"
+                   title="Class Charts - Behaviour Management & Seating Charts">
+                </a>
+                                    <img id="bett-logo" class="hidden-sm hidden-xs"
+                         src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/BETT-AWARDS-2017_winner.jpg"/>
+                            </div>
+            <div id="primary-navigation-collapse"
+                 class="collapse navbar-collapse">
+                <ul id="primary-navigation-list"
+                    class="navigation-list nav navbar-nav navbar-right">
+                                            <li>
+                            <a href="/pages/features">
+                                Features                            </a>
+                        </li>
+                                        <li class="dropdown">
+    <a id="login-dropdown"
+        class="dropdown-toggle"
+        href="/account/login"
+        data-toggle="dropdown">
+        Login    </a>
+    <ul class="dropdown-menu"
+        aria-labelledby="languages-dropdown">
+        <li>
+            <a href="/account/login">
+                Teacher            </a>
+        </li>
+        <li>
+            <a href="/parent/login">
+                Parent            </a>
+        </li>
+        <li>
+            <a href="/student/login">
+                Student            </a>
+        </li>
+    </ul>
+</li>
+                                            <li>
+                            <a class="btn-cta-navigation"
+                               href="/demo">
+                                Request your demo                            </a>
+                        </li>
+                                    </ul>
+            </div> <!-- /#primary-navigation-collapse -->
+        </div> <!-- /.container -->
+    </nav>
+</header>
+                        <div id="content">
+                
+
+
+<section id="intro-section"
+    class="page-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-1">
+                <h2>Plan ahead: Seating Plans and effective behaviour management will help keep pupils and staff safe</h2>
+                <p>Save teachers time & reduce workload with our data rich seating plans. Improve pupil behaviour with our fast and effective behaviour management.</p>
+
+                <a class="btn btn-lg btn-school-secondary"
+                   href="#secondary">
+                    I'm a secondary school                </a>
+                <a class="btn btn-lg btn-school-primary"
+                   href="https://pages.classcharts.com/primary/">
+                    I'm a primary school                </a>
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-lg-6">
+                <img id="intro-video-image"
+                     class="img-responsive"
+                     src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/split/example.png" />
+                <div id="secondary"></div>
+            </div>
+        </div>
+    </div>
+</section> <!-- /#intro-section -->
+<section id="core-features-section"
+    class="page-section">
+    <div class="container">
+        <h2>Outstanding classroom management</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="core-feature">
+                    <img src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/secondary/noun-254123-cc.png" />
+                    <h3>Instant seating plans</h3>
+                    <p>
+                        The seating plans reduce your teachers' workload and ensure they are always aware of key pupil data for differentiation.'
+                    </p>
+                </div>
+            </div> <!-- /.col-md-4 -->
+            <div class="col-md-4">
+                <div class="core-feature">
+                    <img src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/secondary/noun-254043-cc.png" />
+                    <h3>Fast behaviour management</h3>
+                    <p>
+                        Our behaviour management is quick and simple to use. Monitor and motivate pupils with achievement and behaviour points in 2 easy clicks.                    </p>
+                </div>
+            </div> <!-- /.col-md-4 -->
+            <div class="col-md-4">
+                <div class="core-feature">
+                    <img src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/secondary/noun-72655-cc.png" />
+                    <h3>Beautiful behaviour analytics</h3>
+                    <p>
+                        Instant reports for teachers, form tutors, pastoral teams and SLT. Sharable with parents and pupils via our apps.                    </p>
+                </div>
+            </div> <!-- /.col-md-4 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</section> <!-- /#core-features-section -->
+<section id="more-features-section"
+    class="page-section">
+    <div class="container">
+        <h2>Connects with <b>SIMS, Integris, CMIS</b> and more</h2>
+    </div> <!-- /.container -->
+</section> <!-- /#more-features-section -->
+<section id="easy-for-teachers-feature-section"
+    class="page-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 text-left">
+                <h2>Easy for teachers, Powerful for SLT</h2>
+                <p>
+                    Class Charts has been designed by a teacher with 16 years of experience in the classroom. We know how important it is that software is simple and easy to use for your teaching team and understand the need for SLT to have a powerful reporting engine which gives them the information they need in seconds.                </p>
+            </div> <!-- /.col-md-6 -->
+            <div class="col-md-6 bg-image">
+                <img class="img-responsive"
+                    src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/secondary/iPad-920-800.png" />
+            </div> <!-- /.col-md-6 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</section> <!-- /#more-features-section -->
+<section id="features-box-section"
+    class="page-section">
+    <div class="container">
+        <div id="features-box">
+            <div class="features-box-row">
+                <div class="features-box features-box-orange">
+                    <div class="features-box-front">
+                        <h3><span data-number="100">100</span>%</h3>
+                        <p>improvement in Ofsted</p>
+                    </div> <!-- /.features-box-front -->
+                    <div class="features-box-back">
+                        <p><b>100%</b> of our schools who were Ofsted rated Requires Improvement for Personal development, behaviour and welfare improved to Good at their next inspection.</p>
+                    </div> <!-- /.features-box-front -->
+                </div> <!-- /.features-box -->
+                <div class="features-box features-box-green">
+                    <div class="features-box-front">
+                        <h3><span data-number="400">400</span>%</h3>
+                        <p>increase in positive points</p>
+                    </div> <!-- /.features-box-front -->
+                    <div class="features-box-back">
+                        <p>Class Charts is so easy to use that we see an increase in achievement points of over 400% once a school comes on board.</p>
+                    </div> <!-- /.features-box-front -->
+                </div> <!-- /.features-box -->
+            </div> <!-- /.features-box-row -->
+            <div class="features-box-row">
+                <div class="features-box features-box-violet">
+                    <div class="features-box-front">
+                        <h3><span data-number="98">98</span>%</h3>
+                        <p>reduction in fixed term exclusions</p>
+                    </div> <!-- /.features-box-front -->
+                    <div class="features-box-back">
+                        <p>Talk to us about how Acklam Grange School reduced their fixed term exclusions from 4 per week to just 2 in total for the whole year.</p>
+                    </div> <!-- /.features-box-front -->
+                </div> <!-- /.features-box -->
+                <div class="features-box features-box-blue">
+                    <div class="features-box-front">
+                        <h3><span data-number="30">30</span>hrs</h3>
+                        <p>of time saved per teacher per year</p>
+                    </div> <!-- /.features-box-front -->
+                    <div class="features-box-back">
+                        <p>Based on a teacher having 10 classes and changing their seating plan once per term the time saving is obvious and increases further with our behaviour management.</p>
+                    </div> <!-- /.features-box-front -->
+                </div> <!-- /.features-box -->
+            </div> <!-- /.features-box-row -->
+        </div> <!-- /#features-box -->
+    </div> <!-- /.container -->
+</section> <!-- #features-box-section -->
+<section id="driven-by-ai-feature-section"
+    class="page-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 text-left">
+                <h2>Influences</h2>
+                <p>
+                    Unique to class Charts, "Influences" makes the best of the data inputted by those who know your pupils best. We suggest seating plans based on the historical effect pupils have on each others behaviours, development and progress.                </p>
+            </div> <!-- /.col-md-6 -->
+            <div class="col-md-6 bg-image">
+                <img class="img-responsive"
+                    src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/secondary/influences-760-664.png" />
+            </div> <!-- /.col-md-6 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</section> <!-- /#more-features-section -->
+<section id="how-it-works-section"
+    class="page-section">
+    <div class="container">
+        <h2>How it works</h2>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <p>We love what we do and think you will too! Watch this video for an overview of how we roll.</p>
+            </div>
+        </div>
+        <img id="play-circle-image"
+            class="img-responsive"
+            src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/secondary/play-circle-outline.png"
+            alt="See how Class Charts works"
+            data-toggle="modal"
+            data-target="#how-it-works-video-modal" />
+    </div>
+</section> <!-- /#how-it-works-section -->
+<section id="testimonials-section"
+    class="page-section">
+    <div class="container">
+        <h2>Why do so many schools use Class Charts?</h2>
+        <div id="testimonials-carousel"
+            class="carousel slide"
+            data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#testimonials-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#testimonials-carousel" data-slide-to="1"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="testimonial">
+    <div class="testimonial-header clearfix">
+                <img src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/secondary/logos/huxlow-science.jpg"
+            />
+                <b>Kim Isaksen</b> <br />
+        <i>Deputy Head, Huxlow Science College</i>
+    </div> <!-- /.testimonial-header -->
+    <div class="testimonial-content">
+        It is astonishing how well staff have bought into it! The students are loving it and it is useful to see where our problem areas are after only a week.    </div> <!-- .testimonials-content -->
+    <div class="testimonial-footer">
+        <a href="/stories">
+            Read More >
+        </a>
+    </div> <!-- /.testimonial-header -->
+</div> <!-- /.testimonial -->
+                        </div> <!-- /.col-lg-3 -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="testimonial">
+    <div class="testimonial-header clearfix">
+                <img src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/secondary/logos/danum-academy.jpeg"
+            />
+                <b>Robert Sidebottom</b> <br />
+        <i>Data Manager, Danum Academy</i>
+    </div> <!-- /.testimonial-header -->
+    <div class="testimonial-content">
+        Class Charts is more than just a seating plan tool and it is developing into a critical system for the management of poor behaviour and rewards. I cannot recommend this product or Edukey enough.    </div> <!-- .testimonials-content -->
+    <div class="testimonial-footer">
+        <a href="/stories">
+            Read More >
+        </a>
+    </div> <!-- /.testimonial-header -->
+</div> <!-- /.testimonial -->
+                        </div> <!-- /.col-lg-3 -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="testimonial">
+    <div class="testimonial-header clearfix">
+                <img src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/secondary/logos/stJamesChurchofEnglandHighSchool.jpg"
+            style="margin-top: 10px"/>
+                <b>Roy Coulson</b> <br />
+        <i>St James C of E School</i>
+    </div> <!-- /.testimonial-header -->
+    <div class="testimonial-content">
+        The visual representation of the data really helps a teacher plan and organise the room to maximise learning opportunities and, if required, make changes quickly and easily. A real winner!    </div> <!-- .testimonials-content -->
+    <div class="testimonial-footer">
+        <a href="/stories">
+            Read More >
+        </a>
+    </div> <!-- /.testimonial-header -->
+</div> <!-- /.testimonial -->
+                        </div> <!-- /.col-lg-3 -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="testimonial">
+    <div class="testimonial-header clearfix">
+                <img src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/secondary/logos/acklam-grange.jpg"
+            />
+                <b>Jon Tait</b> <br />
+        <i>Acklam Grange School</i>
+    </div> <!-- /.testimonial-header -->
+    <div class="testimonial-content">
+        Eighteen months ago we were about four exclusions a week on average, currently we’re now down to two exclusions so far this year, the whole year.    </div> <!-- .testimonials-content -->
+    <div class="testimonial-footer">
+        <a href="/stories">
+            Read More >
+        </a>
+    </div> <!-- /.testimonial-header -->
+</div> <!-- /.testimonial -->
+                        </div> <!-- /.col-lg-3 -->
+                    </div> <!-- /.row -->
+                </div> <!-- /.item -->
+                <div class="item">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="testimonial">
+    <div class="testimonial-header clearfix">
+                <img src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/secondary/logos/st-annes-catholic.png"
+            />
+                <b>Andrea Matteucci</b> <br />
+        <i>St Anne's Catholic School</i>
+    </div> <!-- /.testimonial-header -->
+    <div class="testimonial-content">
+        We introduced Class Charts at St-Annes at the beginning of this academic year. It was really well received by staff and is being used to provide data-rich seating plans which saves time and makes data more readily available for day-to-day use in planning and differentiation.    </div> <!-- .testimonials-content -->
+    <div class="testimonial-footer">
+        <a href="/stories">
+            Read More >
+        </a>
+    </div> <!-- /.testimonial-header -->
+</div> <!-- /.testimonial -->
+                        </div> <!-- /.col-lg-3 -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="testimonial">
+    <div class="testimonial-header clearfix">
+                <img src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/secondary/logos/ofsted.jpg"
+            />
+                <b>Sarah Hubbard, Her Majesty's Inspector</b> <br />
+        <i>Ofsted</i>
+    </div> <!-- /.testimonial-header -->
+    <div class="testimonial-content">
+        Senior leaders are effectively improving students’ behaviour and achievement. Leaders are now using the online system for gathering information about students' behaviour in class ("class charts") more tactically.    </div> <!-- .testimonials-content -->
+    <div class="testimonial-footer">
+        <a href="/stories">
+            Read More >
+        </a>
+    </div> <!-- /.testimonial-header -->
+</div> <!-- /.testimonial -->
+                        </div> <!-- /.col-lg-3 -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="testimonial">
+    <div class="testimonial-header clearfix">
+                <img src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/secondary/logos/melksham.gif"
+            />
+                <b>Aidan Blowers</b> <br />
+        <i>Melkshamoak School</i>
+    </div> <!-- /.testimonial-header -->
+    <div class="testimonial-content">
+        Duncan, we have been really happy with Class Charts. It is very user friendly and the staff have been pleased with it.    </div> <!-- .testimonials-content -->
+    <div class="testimonial-footer">
+        <a href="/stories">
+            Read More >
+        </a>
+    </div> <!-- /.testimonial-header -->
+</div> <!-- /.testimonial -->
+                        </div> <!-- /.col-lg-3 -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="testimonial">
+    <div class="testimonial-header clearfix">
+                <img src="https://195ec04504ea0272771e-7c2c6dacbab7a2b2d574b53c70c1fe31.ssl.cf3.rackcdn.com/15.0.5/img/secondary/logos/ralphthoresby.png"
+            style="margin-top: 10px"/>
+                <b>Steve Hackshaw</b> <br />
+        <i>Ralph Thoresby School</i>
+    </div> <!-- /.testimonial-header -->
+    <div class="testimonial-content">
+        All inspectors were given a printed classcharts seating plan as they came in which enabled them to do their job effectively, and helped our staff to show how they manage and track all the students in each class.    </div> <!-- .testimonials-content -->
+    <div class="testimonial-footer">
+        <a href="/stories">
+            Read More >
+        </a>
+    </div> <!-- /.testimonial-header -->
+</div> <!-- /.testimonial -->
+                        </div> <!-- /.col-lg-3 -->
+                    </div> <!-- /.row -->
+                </div> <!-- /.item -->
+            </div> <!-- /.carousel-inner -->
+            <!-- Controls -->
+            <a class="left carousel-control" href="#testimonials-carousel" role="button" data-slide="prev">
+                <span class="fa fa-3x fa-angle-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#testimonials-carousel" role="button" data-slide="next">
+                <span class="fa fa-3x fa-angle-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div> <!-- /#testimonials-carousel -->
+    </div>
+</section> <!-- /#testimonials-section -->
+<section id="try-section"
+    class="page-section">
+    <div class="container">
+        <h2>Try Class Charts Now</h2>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <p>Let us show you how to save time, reduce teachers' workload and remove the big barriers to learning! Join over 180,000 other teachers already using Class Charts.</p>
+            </div>
+        </div>
+        <a class="btn btn-lg btn-cta"
+            href="https://pages.classcharts.com/demo/">
+            Request your demo        </a>
+    </div>
+</section> <!-- /#try-section -->
+
+<div id="intro-video-modal"
+    class="modal fade" 
+    tabindex="-1" 
+    role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="embed-responsive embed-responsive-16by9">
+                </div>
+            </div>
+        </div> <!-- /.modal-content -->
+    </div> <!-- /.modal-dialog -->
+</div> <!-- /.modal -->
+<div id="how-it-works-video-modal"
+    class="modal fade" 
+    tabindex="-1" 
+    role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src=""
+                        width="420"
+                        height="345"
+                        frameborder="0"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div> <!-- /.modal-content -->
+    </div> <!-- /.modal-dialog -->
+</div> <!-- /.modal -->
+<script>
+    $(document).ready(function() {
+        $('#intro-video-modal').on('shown.bs.modal', function() {
+            var iframe = $(this).find('iframe');
+            
+            iframe[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+        });
+        
+        $('#intro-video-modal').on('hide.bs.modal', function() {
+            var iframe = $(this).find('iframe');
+            
+            iframe[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+        });
+        
+        $('#how-it-works-video-modal').on('shown.bs.modal', function() {
+            var iframe = $(this).find('iframe');
+            
+            iframe.attr('src', 'https://www.edukey.co.uk/static/videos/whole_school3/whole_school3_player.html');
+        });
+        
+        $('#how-it-works-video-modal').on('hide.bs.modal', function() {
+            var iframe = $(this).find('iframe');
+            
+            iframe.attr('src', '');
+        });
+    });
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N7QVPT8');</script>
+<!-- Google Tag Manager -->            </div> <!-- /#content -->
+                            <footer id="footer" role="contentinfo">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Edukey</h4>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                <h5>Address</h5>
+                <address>
+                                            10 West Street <br />
+                        Fishguard <br />
+                        SA65 9AE
+                                    </address>
+            </div> <!-- /.col-md-3 -->
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                                    <h5>Phone No. <i>(UK)</i></h5>
+                    <p class="phone-number">+44 1348 800 100</p>
+                    <br />
+                    <h5>Phone No. <i>(US)</i></h5>
+                    <p class="phone-number">1-312-800-9569</p>
+                            </div> <!-- /.col-md-3 -->
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                                    <h5>Fax No.</h5>
+                    <p class="phone-number">+44 20 3695 0385</p>
+                    <br />
+                    <h5>Company No. <i>05855261</i></h5>
+                    <p>Registered in England and Wales.</p>
+                            </div> <!-- /.col-md-3 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+        <hr />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <nav id="tertiary-navigation"
+                    class="navigation"
+                    role="navigation">
+                    <ul id="tertiary-navigation-list"
+                        class="navigation-list list-inline">
+                        <li>
+                            <a href="/">
+                                Home                            </a>
+                        </li>
+                        <li>
+                            <a href="/account/login">
+                                Log in                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/features">
+                                Whole School Version                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.edukey.co.uk/edukey-terms-conditions/">
+                                Terms of service                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.edukey.co.uk/privacy/">
+                                Privacy                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.edukey.co.uk/gdpr-compliance/">
+                                GDPR compliance                            </a>
+                        </li>
+                    </ul> <!-- /#tertiary-navigation-list -->
+                </nav>     <!-- /#tertiary-navigation -->
+            </div> <!-- /.col-md-8 -->
+            <div class="col-md-4">
+                <div id="copyright" class="text-right">
+                    © Class Charts 2020                </div> <!-- /#copyright -->
+            </div> <!-- /.col-md-4 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</footer>
+                    </div>
+        <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37181457-1', 'auto', {allowLinker: true});
+ga('require', 'linker');
+ga('linker:autoLink', ['www.classcharts.com', 'pages.classcharts.com']);
+ga('send', 'pageview');
+
+</script>    </body>
 </html>
